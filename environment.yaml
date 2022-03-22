@@ -1,0 +1,11 @@
+name: venv
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python>=3.8
+  - pdal
+  - python-pdal
+  - gdal
+  - pip:
+    - lazperf==1.4.4
