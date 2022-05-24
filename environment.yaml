@@ -7,5 +7,6 @@ dependencies:
   - pdal
   - python-pdal
   - gdal
+  - pip
   - pip:
     - lazperf==1.4.4
