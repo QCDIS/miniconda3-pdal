@@ -10,3 +10,4 @@ dependencies:
   - pip
   - pip:
     - lazperf==1.4.4
+    - laspy[lazrs,laszip]
