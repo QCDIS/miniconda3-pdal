@@ -4,10 +4,10 @@ channels:
   - defaults
 dependencies:
   - python>=3.9
-  - pdal
+  - pdal~=3.2.0
   - python-pdal
   - gdal
-  - pip
+  - pip~=22.3.1
   - pip:
     - lazperf==1.4.4
     - laspy[lazrs,laszip]
