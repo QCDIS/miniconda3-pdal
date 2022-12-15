@@ -5,11 +5,10 @@ channels:
   - mathieu
 dependencies:
   - python>=3.8
-  - pdal>=2.3
+  - pdal
   - python-pdal
   - gdal
-  - pip
   - lazperf
-  - laspy>=2.2.0
-  - laszip>=3.4.1
-  - lazrs-python>=0.4.3
+  - laspy
+  - laszip
+  - lazrs-python
