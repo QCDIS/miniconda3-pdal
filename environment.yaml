@@ -2,13 +2,13 @@ name: venv
 channels:
   - conda-forge
   - defaults
-  - mathieu
 dependencies:
-  - python>=3.8
+  - python>=3.9
   - pdal
   - python-pdal
   - gdal
-  - lazperf
-  - laspy
-  - laszip
-  - lazrs-python
+  - pip
+  - pip:
+    - lazperf==1.4.4
+    - laspy[lazrs,laszip]
+    - numpy==1.23.0
