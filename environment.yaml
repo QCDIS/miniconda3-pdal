@@ -8,8 +8,4 @@ dependencies:
   - pdal
   - gdal
   - python-pdal
-#  - pip
-#  - pip:
-#    - lazperf==1.4.4
-#    - laspy[lazrs,laszip]
-#    - numpy==1.23.0
+  - cxx-compiler
