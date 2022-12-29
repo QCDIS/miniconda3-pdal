@@ -8,5 +8,4 @@ dependencies:
   - pdal
   - gdal
   - python-pdal
-  - lazrs-python
   - cxx-compiler
