@@ -1,6 +1,7 @@
 FROM continuumio/miniconda3
 
-RUN conda install mamba -n base -c conda-forge
+RUN conda install -c mamba conda-forge conda-merge conda-pack
+
 COPY environment.yml .
 RUN mamba env create -f environment.yml
 
