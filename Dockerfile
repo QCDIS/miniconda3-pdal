@@ -1,4 +1,4 @@
-FROM continuumio/miniconda3
+FROM continuumio/miniconda3:22.11.1
 RUN conda install -c conda-forge mamba conda-merge conda-pack
 RUN wget https://raw.githubusercontent.com/QCDIS/NaaVRE/main/docker/laserfarm-pytorch/environment.yaml
 RUN mamba env create -f environment.yml
