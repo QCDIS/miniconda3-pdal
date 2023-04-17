@@ -10,6 +10,7 @@ SHELL ["conda", "run", "-n", "venv", "/bin/bash", "-c"]
 RUN echo "conda activate venv" >> ~/.bashrc
 SHELL ["/bin/bash", "--login", "-c"]
 
+RUN conda install -c conda-forge conda-pack
 # test packages
 # RUN python -c "import fnmatch"
 # RUN python -c "from dask.distributed import LocalCluster, SSHCluster "
