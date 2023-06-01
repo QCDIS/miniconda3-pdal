@@ -1,16 +1,14 @@
-FROM continuumio/miniconda3:23.3.1-0
-RUN conda install -c conda-forge mamba
+FROM condaforge/mambaforge:23.1.0-1
+
+RUN conda install -c conda-forge conda-merge conda-pack
 RUN wget https://raw.githubusercontent.com/QCDIS/NaaVRE/main/docker/laserfarm-pytorch/environment.yaml
+COPY environment.yaml .
 RUN mamba env create -f environment.yaml
 
-RUN conda list
-
-
+ENV PATH /opt/conda/envs/venv/bin:$PATH
 SHELL ["conda", "run", "-n", "venv", "/bin/bash", "-c"]
 RUN echo "conda activate venv" >> ~/.bashrc
 SHELL ["/bin/bash", "--login", "-c"]
-
-RUN conda install -c conda-forge conda-merge conda-pack
 
 # test packages
 RUN wget https://raw.githubusercontent.com/QCDIS/NaaVRE/main/docker/laserfarm-pytorch/test_laserchicken.py

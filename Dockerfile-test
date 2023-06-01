@@ -1,0 +1,16 @@
+
+FROM pdal AS build
+COPY test-environment.yaml .
+RUN conda env update -n venv -f test-environment.yaml
+RUN conda-pack -n venv -o /tmp/env.tar && \
+    mkdir /venv && cd /venv && tar xf /tmp/env.tar && \
+    rm /tmp/env.tar
+RUN /venv/bin/conda-unpack
+
+FROM python:3.11-slim-bullseye AS runtime
+RUN apt update -y && apt upgrade -y && apt install jq -y
+COPY --from=build /venv /venv
+
+# test packages
+RUN apt update && apt install -y wget
+RUN wget https://raw.githubusercontent.com/QCDIS/NaaVRE/main/docker/laserfarm-pytorch/test_laserchicken.py
