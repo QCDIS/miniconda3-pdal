@@ -17,5 +17,5 @@ jobs:
 
     - name: Build test container
       run: |
-        docker build . --file Dockerfile.test -t pdal-test
+        docker build . --file Dockerfile-test -t pdal-test
         docker run -it pdal-test /bin/bash -c "source /venv/bin/activate; python test_laserchicken.py"
