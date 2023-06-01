@@ -2,7 +2,6 @@ FROM condaforge/mambaforge:23.1.0-1
 
 RUN conda install -c conda-forge conda-merge conda-pack
 RUN wget https://raw.githubusercontent.com/QCDIS/NaaVRE/main/docker/laserfarm-pytorch/environment.yaml
-COPY environment.yaml .
 RUN mamba env create -f environment.yaml
 
 ENV PATH /opt/conda/envs/venv/bin:$PATH
