@@ -1,4 +1,4 @@
-FROM condaforge/mambaforge:23.1.0-1
+FROM condaforge/mambaforge:23.1.0-2
 
 RUN conda install -c conda-forge conda-merge conda-pack
 RUN wget https://raw.githubusercontent.com/QCDIS/NaaVRE/main/docker/laserfarm-pytorch/environment.yaml
